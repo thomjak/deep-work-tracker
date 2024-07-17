@@ -1,6 +1,6 @@
 # Deep work tracker
 
-This is a simple web app that helps you track your deep work sessions. It is inspired by the book "Deep Work" by Cal Newport and measuring work in hundreds of hours, as advocaded by Alex Hormozi.
+This is a simple web app that helps you track your deep work sessions. It is inspired by the book "Deep Work" by Cal Newport and measuring work in hundreds of hours, as advocated by Alex Hormozi.
 
 The initial version was generated 100% by prompting Claude.ai Sonnet 3.5 model. I spent around 4-6 hours on this initial version.
 
