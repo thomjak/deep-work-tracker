@@ -1,13 +1,13 @@
 <template>
     <div class="mb-6 p-4 border rounded relative shadow-md">
       <h2 class="text-2xl font-bold mb-2">{{ work.name }}</h2>
-      <p class="mb-2">
+      <p v-if="work.description" class="mb-2">
         {{ truncatedDescription }}
         <a v-if="isDescriptionTruncated" @click="showFullDescription = !showFullDescription" class="text-blue-500 cursor-pointer">
           {{ showFullDescription ? 'Read less' : 'Read more' }}
         </a>
       </p>
-      <p v-if="showFullDescription" class="mb-2">{{ work.description }}</p>
+      <p v-if="showFullDescription && work.description" class="mb-2">{{ work.description }}</p>
       <div class="flex items-center mb-2">
         <div class="w-full bg-gray-200 rounded-full h-2.5 mr-4 overflow-hidden">
           <div class="bg-blue-600 h-2.5 rounded-full transition-all duration-500" :style="{ width: `${(work.timeSpent / (work.hours * 3600)) * 100}%` }"></div>
@@ -72,13 +72,14 @@
       }
   
       const truncatedDescription = computed(() => {
+        if (!props.work.description) return ''
         return props.work.description.length > 100
           ? props.work.description.slice(0, 100) + '...'
           : props.work.description
       })
   
       const isDescriptionTruncated = computed(() => {
-        return props.work.description.length > 100
+        return props.work.description && props.work.description.length > 100
       })
   
       const remainingTimeText = computed(() => {
