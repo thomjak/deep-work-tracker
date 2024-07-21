@@ -1,6 +1,7 @@
 {
   "name": "deep-work-tracker",
-  "version": "0.1.0",
+  "description": "Tracking app for deep work sessions",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
