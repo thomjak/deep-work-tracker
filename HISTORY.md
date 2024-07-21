@@ -1,5 +1,10 @@
 # Verison history
 
+## 1.1.0
+*2024-07-21*
+- Dark mode
+- Improved UI 
+
 ## 1.0.0
 *2024-07-21*
 

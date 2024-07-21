@@ -1,7 +1,7 @@
 {
   "name": "deep-work-tracker",
   "description": "Tracking app for deep work sessions",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -9,6 +9,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@tailwindcss/line-clamp": "^0.4.4",
     "core-js": "^3.8.3",
     "pinia": "^2.1.7",
     "vue": "^3.2.13"

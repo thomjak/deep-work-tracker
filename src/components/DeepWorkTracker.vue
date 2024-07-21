@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="max-w-3xl mx-auto"> <!-- This div controls the width -->
     <button @click="showAddModal = true" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-6 w-full">
       Add Deep Work...
     </button>
@@ -16,16 +16,18 @@
       @cancel="closeConfirmationModal"
     />
 
-    <DeepWorkItem 
-      v-for="work in store.works" 
-      :key="work.id" 
-      :work="work"
-      @edit="editWork"
-      @toggleComplete="toggleComplete"
-      @reset="confirmReset"
-      @delete="confirmDelete"
-      @toggle="toggleWork"
-    />
+    <div class="space-y-4"> <!-- This div adds vertical spacing between items -->
+      <DeepWorkItem 
+        v-for="work in store.works" 
+        :key="work.id" 
+        :work="work"
+        @edit="editWork"
+        @toggleComplete="toggleComplete"
+        @reset="confirmReset"
+        @delete="confirmDelete"
+        @toggle="toggleWork"
+      />
+    </div>
   </div>
 </template>
 
