@@ -4,16 +4,17 @@ on:
   push:
     branches:
       - main  # Set this to your default branch
-
+permissions:
+  contents: write
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
 
     - name: Setup Node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         node-version: '18'  # Set this to the node version you are using
 
@@ -23,9 +24,9 @@ jobs:
     - name: Build
       run: npm run build
 
-    - name: Deploy to GitHub Pages
-      uses: JamesIves/github-pages-deploy-action@4.6.3
+    - name: Deploy to GitHub Pages 🚀
+      uses: JamesIves/github-pages-deploy-action@v4
       with:
-        branch: main  # The branch the action should deploy to.
-        folder: dist  # The folder the action should deploy.
+        branch: main  # Which branch to deploy
+        folder: dist  # Deploy this folder
         clean: true  # Automatically remove deleted files from the deployment
